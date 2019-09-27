@@ -52,8 +52,10 @@ def list_stdev(L):
         return None
     if len(L) == 0:
         return None
+    else:
+        mean = list_mean(L)
 
-    
 
-    sd = math.sqrt(sum([(mean(L)-x)**2 for x in L]) / len(L))
+
+    sd = math.sqrt(sum([(mean-x)**2 for x in L]) / len(L))
     return sd
