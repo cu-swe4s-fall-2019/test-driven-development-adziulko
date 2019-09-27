@@ -3,6 +3,7 @@ import random
 import statistics
 import math
 import math_lib
+import get_data
 
 
 
@@ -66,7 +67,15 @@ class TestMathLib(unittest.TestCase):
             self.assertTrue(math.isclose(r, e))
 
 
+class TestGetData(unittest.TestCase):
 
+    def test_get_data_colnum_none(self):
+        r = get_data.read_stdin_col(None)
+        self.assertEqual(r, None)
+
+    def test_get_data_colnum_empty(self):
+        r = get_data.read_stdin_col([])
+        self.assertEqual(r, None)
 
 
 if __name__ == '__main__':
